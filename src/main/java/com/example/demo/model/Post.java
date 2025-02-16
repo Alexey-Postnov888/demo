@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 public class Post {
     @Id
-    @GeneratedValue
+    /*@GeneratedValue*/
     private Long id;
     private String text;
     private Integer likes;
@@ -41,6 +41,10 @@ public class Post {
 
     public Long getId(){
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setLikes(int likes){

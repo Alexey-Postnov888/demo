@@ -16,11 +16,8 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public void create(final String text) {
-        Post post = new Post();
-        post.setText(text);
-        post.setCreationDate(new Date());
-        post.setLikes(0);
+    public void create(String text) {
+        Post post = new Post(postRepository.count() + 1, text, new Date(), 0);
         postRepository.save(post);
     }
 }
